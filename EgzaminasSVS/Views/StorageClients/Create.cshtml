@@ -1,0 +1,55 @@
+﻿@model EgzaminasSVS.Models.StorageClient
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<h4>Įveskite naujo kliento duomenis:</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label">Vardas</label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label">Pavardė</label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateOfBirth" class="control-label">Gimimo data</label>
+                <input asp-for="DateOfBirth" class="form-control" />
+                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label">Telefono Nr.</label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                
+                <label asp-for="ClientType" class="control-label">Kliento tipas</label>
+                <select asp-for="ClientType" class="form-control" asp-items="@Html.GetEnumSelectList<ClientType>()">
+                    <option></option>
+                </select>
+                <span asp-validation-for="ClientType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Išsaugoti" class="btn btn-outline-dark my-2" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Atgal į sąrašą</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,47 @@
+﻿@model EgzaminasSVS.Models.StorageItem
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<h4>Informacija apie naują daiktą saugykloje</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ItemName" class="control-label">Pavadinimas</label>
+                <input asp-for="ItemName" class="form-control" />
+                <span asp-validation-for="ItemName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ItemWeight" class="control-label">Svoris</label>
+                <input asp-for="ItemWeight" class="form-control" />
+                <span asp-validation-for="ItemWeight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StorageSector" class="control-label">Saugyklos sektorius</label>
+                <input asp-for="StorageSector" class="form-control" />
+                <span asp-validation-for="StorageSector" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlacementDate" class="control-label">Patalpinimo diena</label>
+                <input asp-for="PlacementDate" class="form-control" />
+                <span asp-validation-for="PlacementDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Išsaugoti" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Atgal į sąrašą</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

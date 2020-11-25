@@ -1,0 +1,45 @@
+﻿@model IEnumerable<EgzaminasSVS.Models.StorageClient>
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Sveiki,</h1>
+    <p>Šoje sistemoje rasite informaciją apie sandėlio klientus, jų inventorių. Galite sukurti naują klientą bei redaguoti naujų ir esamų klientų inventoriaus vienetus sandėlyje. Inventoriaus skiltyje galite gauti ataskaitas apie inventorių, saugomą sandėlyje.</p>
+</div>
+
+<div class="text-center">
+    <p>
+        <a asp-controller="StorageClients" asp-action="Create" class="btn btn-outline-dark my-2">Registruoti naują klientą</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Vardas, pavardė
+                </th>
+                <th>
+                    Inventoriaus vienetai sandėlyje
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @*@foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TotalItems)
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.Id">Daugiau informacijos</a>
+                    </td>
+                </tr>
+            }*@
+        </tbody>
+    </table>
+</div>

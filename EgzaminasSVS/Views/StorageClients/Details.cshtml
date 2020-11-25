@@ -1,0 +1,46 @@
+﻿@model EgzaminasSVS.Models.StorageClient
+
+@{
+    ViewData["Title"] = "KlientoInformacija";
+}
+
+
+<div>
+    <h4>Kliento informacija</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Vardas:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class = "col-sm-2">
+            Pavardė:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class = "col-sm-2">
+            Gimimo data:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DateOfBirth)
+        </dd>
+        <dt class = "col-sm-2">
+            Telefono Nr.:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+        <dt class = "col-sm-2">
+            Kliento tipas:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ClientType)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Atgal į sąrašą</a>
+</div>

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<EgzaminasSVS.Models.StorageItem>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Saugykloje saugomi daiktai</h1>
+
+<p>
+    <a asp-action="Create">Pridėti naują daiktą</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Pavadinimas
+            </th>
+            <th>
+                Svoris
+            </th>
+            <th>
+                Saugyklos sektorius
+            </th>
+            <th>
+                Patalpinimo data
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemWeight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StorageSector)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlacementDate)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

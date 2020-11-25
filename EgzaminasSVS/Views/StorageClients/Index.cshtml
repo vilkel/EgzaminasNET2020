@@ -1,0 +1,52 @@
+﻿@model IEnumerable<EgzaminasSVS.Models.StorageClient>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Sandėlio klientai</h1>
+
+    <p>
+        <a asp-action="Create" class="btn btn-outline-dark my-2">Registruoti naują klientą</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Vardas, Pavardė
+                </th>
+                <th>
+                    Telefonas
+                </th>
+                <th>
+                    Kliento tipas
+                </th>
+                <th>
+                    Inventoriaus vienetai sandėlyje
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClientType)
+                </td>
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.TotalItems)*@
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id">Daugiau informacijos</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
